@@ -156,8 +156,8 @@ export default {
             this.$emit('animationStopped', this.animation.index); //emit animationStopped
       },
       reset: function(to) {
-            this.animation.index = Number.isNaN(Number(to)) ? this.animation.index : to;
             if(this.animation.running) this.stop();
+            this.animation.index = Number.isNaN(Number(to)) ? this.animation.lower : to;
             this.render();
             this.$emit('animationReset', this.animation.index); //emit animationReset
       },
