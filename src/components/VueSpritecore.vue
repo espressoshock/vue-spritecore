@@ -121,7 +121,6 @@ export default {
         this.sprite = new Image();
         this.sprite.src = this.spritesheet;
         this.sprite.onload = ({ sprite }) => { this.spriteInit(sprite) }
-
       },
       play(from, to) {
             this.animation.index = Number.isNaN(Number(from)) ? this.animation.index : from;
@@ -142,7 +141,7 @@ export default {
       },
       legacyLoop: function(now) {
           const delta = now - this.timer.last;
-          if(delta>=this.animation.framerate - this.timer.tolerance){
+          if(delta >= this.animation.framerate - this.timer.tolerance) {
               this.timer.last = now - (delta % this.animation.framerate);
               this.render();
               this.animation.index++;
@@ -161,7 +160,6 @@ export default {
             if(this.animation.running) this.stop();
             this.render();
             this.$emit('animationReset', this.animation.index); //emit animationReset
-
       },
       spriteInit: function(sprite) {
             this.context = this.$refs.vueSpritecoreCanvas.getContext('2d');
@@ -169,21 +167,17 @@ export default {
             this.$refs.vueSpritecoreCanvas.height = this.canvasSize.height;
             this.$emit('ready'); //emit ready on img loaded
             if(this.autoplay) this.play();
-
       },
       setBounds: function() {
             if(this.lowerBound !== undefined && this.lowerBound >= 0) this.animation.lower = this.lowerBound;
-            if(this.upperBound !== undefined && this.upperBound <= this.animationLength && this.upperBound>=this.animation.lower)
+            if(this.upperBound !== undefined && this.upperBound <= this.animationLength && this.upperBound >= this.animation.lower)
                 this.animation.upper = this.upperBound;
             else
                 this.animation.upper = this.animationLength;
-
-          console.log(this.animation.lower, this.animation.upper);
       },
       animationLoop: function() {
             this.render();
             this.animation.index++;
-
 
             if(this.animation.index >= this.animation.upper && this.loop)
                 this.animation.index = 0;
@@ -193,7 +187,6 @@ export default {
                 this.timerRequestID = window.requestAnimationFrame(this.animationLoop);
             else
                 this.$emit('animationOver', this.animation.index); //emit animationOver
-
       },
       render: function() {
         this.context.clearRect(0, 0, this.canvasSize.width, this.canvasSize.height);
@@ -209,7 +202,7 @@ export default {
                 height: frame.frame.h
             })
         })
-         this.animation.frames.sort( (a,b) => {
+         this.animation.frames.sort((a, b) => {
             //a != A
             a = a.name.toLowerCase();
             b = b.name.toLowerCase();
@@ -218,7 +211,7 @@ export default {
             if(this.frameSorting.localeCompare(this.sortingMethods.ascending)) return a > b ? -1 : b > a ? 1 : 0;
             return a > b ? 1 : b > a ? -1 : 0;
         });
-      },
+      }
   }
 }
 </script>

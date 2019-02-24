@@ -22,8 +22,9 @@ module.exports = {
     'space-in-parens': ['error', 'never'], //0 space in parenthesis
     'space-before-function-paren': ['error', 'never'], //no space
     'keyword-spacing': [0, 'never'], //don't error keyword spacing
-    'spaced-comment': ['error', 'never'], //no comment whitespaces
-     'curly': 0,// allow inline no rucly bracket
+    'spaced-comment': 0, //no comment whitespaces
+    'curly': 0,// allow inline no rucly bracket
+    'padded-block': 0, //don't check for blank lines
     // allow async-await
     'generator-star-spacing': 0,
     // allow debugger during development
