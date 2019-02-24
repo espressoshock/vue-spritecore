@@ -71,7 +71,29 @@ export default {
 
   data () {
     return {
-    }
+        sortingMethods: {
+            ascending: 'asc',
+            descending: 'desc'
+        },
+       animation: {
+           frames: [],
+           index: undefined,
+           lower: 0,
+           upper: undefined,
+           running: false,
+           framerate: undefined
+       },
+        sprite: undefined,
+        context: undefined,
+        timerRequestID: undefined, //long -> uniquely identifies the entry in the callback list
+        timer: {
+            start: undefined,
+            current: 0,
+            last: 0,
+            tolerance: 0.1
+        }
+
+    };
   },
 }
 </script>
