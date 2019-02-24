@@ -107,6 +107,12 @@ export default {
           return c;
       }
   },
+  created: function(){
+      this.init();
+  },
+  mounted: function(){
+    
+  },
 }
 </script>
 
