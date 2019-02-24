@@ -17,11 +17,19 @@ module.exports = {
   'rules': {
     // allow paren-less arrow functions
     'arrow-parens': 0,
+    'indent': 'off', //no indent checking
+    'semi': 0, //disable ASI semi checking
+    'space-in-parens': ['error', 'never'], //0 space in parenthesis
+    'space-before-function-paren': ['error', 'never'], //no space
+    'keyword-spacing': [0, 'never'], //don't error keyword spacing
+    'spaced-comment': 0, //no comment whitespaces
+    'curly': 0,// allow inline no rucly bracket
+    'padded-block': 0, //don't check for blank lines
     // allow async-await
     'generator-star-spacing': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     // trailing comma
-    'comma-dangle': ['error', 'always-multiline'],
+    'comma-dangle': ['error', 'never'],
   }
 }

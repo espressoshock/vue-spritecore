@@ -1,13 +1,13 @@
 import VueSpritecore from './components/VueSpritecore.vue'
 
 // Install the components
-export function install (Vue) {
+export function install(Vue) {
   Vue.component('vue-spritecore', VueSpritecore)
 }
 
 // Expose the components
 export {
-  VueSpritecore,
+  VueSpritecore
 }
 
 /* -- Plugin definition & Auto-install -- */
@@ -17,7 +17,7 @@ export {
 const plugin = {
   /* eslint-disable no-undef */
   version: VERSION,
-  install,
+  install
 }
 
 export default plugin
