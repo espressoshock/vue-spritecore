@@ -17,10 +17,12 @@ module.exports = {
   'rules': {
     // allow paren-less arrow functions
     'arrow-parens': 0,
-    'indent': "off", //no indent checking
+    'indent': 'off', //no indent checking
     'semi': 0, //disable ASI semi checking
-    'space-in-parens': ["error", "always"], //0 space in parenthesis
-    "space-before-function-paren": ["error", "never"], //no space
+    'space-in-parens': ['error', 'never'], //0 space in parenthesis
+    'space-before-function-paren': ['error', 'never'], //no space
+    'keyword-spacing': [0, 'never'], //don't error keyword spacing
+    'space-comment': ['error', 'never'], //no comment whitespaces
     // allow async-await
     'generator-star-spacing': 0,
     // allow debugger during development
