@@ -1,5 +1,11 @@
 <template>
   <div class="vue-spritecore">
+      <canvas
+      :id='id'
+      :width="canvasSize.width"
+      :height="canvasSize.height"
+      ref="vueSpritecoreCanvas"
+    ></canvas>
   </div>
 </template>
 
