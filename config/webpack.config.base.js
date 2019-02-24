@@ -1,5 +1,4 @@
 var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 var outputFile = 'vue-spritecore'
 var globalName = 'VueSpritecore'
@@ -23,18 +22,12 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          loaders: {
-            css: ExtractTextPlugin.extract('css-loader'),
-          },
-        },
-      },
+      }
     ],
   },
   plugins: [
     new webpack.DefinePlugin({
       'VERSION': JSON.stringify(config.version),
-    }),
-    new ExtractTextPlugin(outputFile + '.css'),
+    })
   ],
 }
