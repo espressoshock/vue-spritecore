@@ -190,7 +190,7 @@ export default {
       },
       render: function() {
         this.context.clearRect(0, 0, this.canvasSize.width, this.canvasSize.height);
-        this.context.drawImage(this.sprite, this.animation.frames[this.animation.index].x, this.animation.frames[this.animation.index].y, this.canvasSize.width, this.canvasSize.height, 0, 0, this.canvasSize.width, this.canvasSize.height);
+        this.context.drawImage(this.sprite, this.animation.frames[this.animation.index].x, this.animation.frames[this.animation.index].y, this.animation.frames[this.animation.index].width, this.animation.frames[this.animation.index].height, 0, 0, this.canvasSize.width, this.canvasSize.height);
       },
       sortFrames: function() {
         this.json.frames.forEach((frame) => {
