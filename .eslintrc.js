@@ -18,6 +18,7 @@ module.exports = {
     // allow paren-less arrow functions
     'arrow-parens': 0,
     'indent': "off", //no indent checking
+    'semi': 0, //disable ASI semi checking
     // allow async-await
     'generator-star-spacing': 0,
     // allow debugger during development
