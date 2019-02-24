@@ -24,7 +24,7 @@ export default {
       default: {}
     },
     frameSorting: {
-        type: String, 
+        type: String,
         required: false,
         default: 'asc',
         validator(val){
@@ -33,27 +33,27 @@ export default {
     },
     scaleX: {
         type: Number,
-        default: 1, 
+        default: 1,
         required: false
     },
     scaleY: {
         type: Number,
-        default: 1, 
+        default: 1,
         required: false
     },
     autoplay: {
         type: Boolean,
-        default: false, 
+        default: false,
         required: false
     },
     loop: {
         type: Boolean,
-        default: true, 
+        default: true,
         required: false
     },
     id: {
         type: String,
-        default: 'vue-spritecore-canvas', 
+        default: 'vue-spritecore-canvas',
         required: false
     },
     lowerBound: {
@@ -66,7 +66,7 @@ export default {
         default: undefined,
         required: false
     }
-   
+
   },
 
   data () {
@@ -97,13 +97,13 @@ export default {
   computed: {
       animationLength: function(){
           if(!this.animation.frames) return 0;
-          return this.animation.frames.length;  
+          return this.animation.frames.length;
       },
       canvasSize: function(){
             if(!this.animation.frames) return undefined;
             let c = {};
-            c.width = this.animation.frames[this.animation.lower].width*this.scaleX; 
-            c.height = this.animation.frames[this.animation.lower].height*this.scaleY; 
+            c.width = this.animation.frames[this.animation.lower].width*this.scaleX;
+            c.height = this.animation.frames[this.animation.lower].height*this.scaleY;
           return c;
       }
   },
@@ -111,7 +111,7 @@ export default {
       this.init();
   },
   mounted: function(){
-    
+
   },
   methods: {
       init: function(){
@@ -136,7 +136,7 @@ export default {
 
             this.animation.running = true;
             this.$emit('animationStarted', this.animation.index, this.animation.upper); //emit animationStart
-            
+
             this.timer.last = performance.now();
             this.timerRequestID = requestAnimationFrame(this.legacyLoop);
       },
@@ -169,21 +169,21 @@ export default {
             this.$refs.vueSpritecoreCanvas.height = this.canvasSize.height;
             this.$emit('ready'); //emit ready on img loaded
             if(this.autoplay) this.play();
-        
+
       },
       setBounds: function(){
             if(this.lowerBound !== undefined && this.lowerBound>=0) this.animation.lower = this.lowerBound;
-            if(this.upperBound !== undefined && this.upperBound<=this.animationLength && this.upperBound>=this.animation.lower) 
+            if(this.upperBound !== undefined && this.upperBound<=this.animationLength && this.upperBound>=this.animation.lower)
                 this.animation.upper = this.upperBound;
             else
                 this.animation.upper = this.animationLength;
 
           console.log(this.animation.lower, this.animation.upper);
       },
-      animationLoop: function(){      
+      animationLoop: function(){
             this.render();
             this.animation.index++;
-           
+
 
             if(this.animation.index>=this.animation.upper && this.loop)
                 this.animation.index = 0;
