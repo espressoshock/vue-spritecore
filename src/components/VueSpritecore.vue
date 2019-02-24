@@ -179,14 +179,16 @@ export default {
             this.render();
             this.animation.index++;
 
-            if(this.animation.index >= this.animation.upper && this.loop)
-                this.animation.index = 0;
-
             //framesToConsume
             if(this.animation.index < this.animation.upper)
                 this.timerRequestID = window.requestAnimationFrame(this.animationLoop);
-            else
+            else{
                 this.$emit('animationOver', this.animation.index); //emit animationOver
+                if(this.loop) {
+                    this.animation.index = this.animation.lower;
+                    this.timerRequestID = window.requestAnimationFrame(this.animationLoop);
+                }
+            }
       },
       render: function() {
         this.context.clearRect(0, 0, this.canvasSize.width, this.canvasSize.height);
