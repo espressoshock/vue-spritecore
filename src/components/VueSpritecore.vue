@@ -12,6 +12,62 @@
 <script>
 export default {
   name: 'vue-spritecore',
+  props: {
+    spritesheet: {
+      required: true,
+      type: String,
+      default: ""
+    },
+    json: {
+      required: true,
+      type: Object,
+      default: {}
+    },
+    frameSorting: {
+        type: String, 
+        required: false,
+        default: 'asc',
+        validator(val){
+            return ['asc', 'desc'].includes(val);
+        }
+    },
+    scaleX: {
+        type: Number,
+        default: 1, 
+        required: false
+    },
+    scaleY: {
+        type: Number,
+        default: 1, 
+        required: false
+    },
+    autoplay: {
+        type: Boolean,
+        default: false, 
+        required: false
+    },
+    loop: {
+        type: Boolean,
+        default: true, 
+        required: false
+    },
+    id: {
+        type: String,
+        default: "vue-spritecore-canvas", 
+        required: false
+    },
+    lowerBound: {
+        type: Number,
+        default: undefined,
+        required: false
+    },
+    upperBound: {
+        type: Number,
+        default: undefined,
+        required: false
+    }
+   
+  },
 
   data () {
     return {
