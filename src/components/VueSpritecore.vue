@@ -92,8 +92,20 @@ export default {
             last: 0,
             tolerance: 0.1
         }
-
     };
+  },
+  computed: {
+      animationLength: function(){
+          if(!this.animation.frames) return 0;
+          return this.animation.frames.length;  
+      },
+      canvasSize: function(){
+            if(!this.animation.frames) return undefined;
+            let c = {};
+            c.width = this.animation.frames[this.animation.lower].width*this.scaleX; 
+            c.height = this.animation.frames[this.animation.lower].height*this.scaleY; 
+          return c;
+      }
   },
 }
 </script>
