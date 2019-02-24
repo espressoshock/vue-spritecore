@@ -19,6 +19,7 @@ module.exports = {
     'arrow-parens': 0,
     'indent': "off", //no indent checking
     'semi': 0, //disable ASI semi checking
+    'space-in-parens': ["error", "always"], //0 space in parenthesis
     // allow async-await
     'generator-star-spacing': 0,
     // allow debugger during development
