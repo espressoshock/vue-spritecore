@@ -102,8 +102,8 @@ export default {
       canvasSize: function() {
             if (!this.animation.frames) return undefined;
             let c = {};
-            c.width = this.animation.frames[this.animation.lower].width*this.scaleX;
-            c.height = this.animation.frames[this.animation.lower].height*this.scaleY;
+            c.width = this.animation.frames[this.animation.lower].width * this.scaleX;
+            c.height = this.animation.frames[this.animation.lower].height * this.scaleY;
           return c;
       }
   },
@@ -132,7 +132,7 @@ export default {
       },
       playLegacy(frameRate) {
             if(!Number.isNaN(Number(frameRate) && frameRate > 0))
-                this.animation.framerate = 1000/frameRate;
+                this.animation.framerate = 1000 / frameRate;
 
             this.animation.running = true;
             this.$emit('animationStarted', this.animation.index, this.animation.upper); //emit animationStart
@@ -148,7 +148,7 @@ export default {
               this.animation.index++;
           }
            //framesToConsume
-            if(this.animation.index<this.animation.upper) this.timerRequestID = requestAnimationFrame(this.legacyLoop);
+            if(this.animation.index < this.animation.upper) this.timerRequestID = requestAnimationFrame(this.legacyLoop);
             console.log(this.animation.framerate);
       },
       stop: function() {
@@ -172,8 +172,8 @@ export default {
 
       },
       setBounds: function() {
-            if(this.lowerBound !== undefined && this.lowerBound>=0) this.animation.lower = this.lowerBound;
-            if(this.upperBound !== undefined && this.upperBound<=this.animationLength && this.upperBound>=this.animation.lower)
+            if(this.lowerBound !== undefined && this.lowerBound >= 0) this.animation.lower = this.lowerBound;
+            if(this.upperBound !== undefined && this.upperBound <= this.animationLength && this.upperBound>=this.animation.lower)
                 this.animation.upper = this.upperBound;
             else
                 this.animation.upper = this.animationLength;
@@ -185,11 +185,11 @@ export default {
             this.animation.index++;
 
 
-            if(this.animation.index>=this.animation.upper && this.loop)
+            if(this.animation.index >= this.animation.upper && this.loop)
                 this.animation.index = 0;
 
             //framesToConsume
-            if(this.animation.index<this.animation.upper)
+            if(this.animation.index < this.animation.upper)
                 this.timerRequestID = window.requestAnimationFrame(this.animationLoop);
             else
                 this.$emit('animationOver', this.animation.index); //emit animationOver
