@@ -1,10 +1,10 @@
 <template>
-  <div class="vue-spritecore">
+  <div class='vue-spritecore'>
       <canvas
       :id='id'
-      :width="canvasSize.width"
-      :height="canvasSize.height"
-      ref="vueSpritecoreCanvas"
+      :width='canvasSize.width'
+      :height='canvasSize.height'
+      ref='vueSpritecoreCanvas'
     ></canvas>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
     spritesheet: {
       required: true,
       type: String,
-      default: ""
+      default: ''
     },
     json: {
       required: true,
@@ -53,7 +53,7 @@ export default {
     },
     id: {
         type: String,
-        default: "vue-spritecore-canvas", 
+        default: 'vue-spritecore-canvas', 
         required: false
     },
     lowerBound: {
@@ -164,7 +164,7 @@ export default {
 
       },
       spriteInit: function(sprite){
-            this.context = this.$refs.vueSpritecoreCanvas.getContext("2d");
+            this.context = this.$refs.vueSpritecoreCanvas.getContext('2d');
             this.$refs.vueSpritecoreCanvas.width = this.canvasSize.width;
             this.$refs.vueSpritecoreCanvas.height = this.canvasSize.height;
             this.$emit('ready'); //emit ready on img loaded
