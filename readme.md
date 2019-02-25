@@ -5,7 +5,7 @@
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
 <span style="display:block;text-align:center">
-    <img src="./assets/vue-spritecore-logo-2.png" alt="vue-spritecore logo">
+    <img src="./assets/vue-spritecore-logo.png" alt="vue-spritecore logo">
 </span>
 
 
