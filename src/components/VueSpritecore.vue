@@ -97,7 +97,7 @@ export default {
   computed: {
       animationLength: function() {
           if(!this.animation.frames) return 0;
-          return this.animation.frames.length;
+          return this.animation.frames.length-1;
       },
       canvasSize: function() {
             if (!this.animation.frames) return undefined;
