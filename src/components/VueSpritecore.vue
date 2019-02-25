@@ -97,14 +97,14 @@ export default {
   computed: {
       animationLength: function() {
           if(!this.animation.frames) return 0;
-          return this.animation.frames.length-1;
+          return this.animation.frames.length - 1;
       },
       canvasSize: function() {
             if (!this.animation.frames) return undefined;
-            let c = {};
-            c.width = this.animation.frames[this.animation.lower].width * this.scaleX;
-            c.height = this.animation.frames[this.animation.lower].height * this.scaleY;
-          return c;
+          return {
+                width: this.animation.frames[this.animation.lower].width * this.scaleX,
+                height: this.animation.frames[this.animation.lower].height * this.scaleY
+          };
       }
   },
   created: function() {
