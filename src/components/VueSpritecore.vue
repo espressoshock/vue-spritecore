@@ -148,7 +148,6 @@ export default {
           }
            //framesToConsume
             if(this.animation.index < this.animation.upper) this.timerRequestID = requestAnimationFrame(this.legacyLoop);
-            console.log(this.animation.framerate);
       },
       stop: function() {
             window.cancelAnimationFrame(this.timerRequestID);
