@@ -21,7 +21,7 @@ export default {
     json: {
       required: true,
       type: Object,
-      default: {}
+      default: () => []
     },
     frameSorting: {
         type: String,
