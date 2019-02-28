@@ -205,6 +205,8 @@ playLegacy | framerate (_optional_) | 60
 
 > In most of the cases it is not recommended to run the animation at a predefined constant framerate (through the playLegacy method) using a delta time based timing fn. A good explanation has already been given [here](https://stackoverflow.com/a/46346441) .
 
+>**Note:** playLegacy() doesn't support _autoplay_ or _loop_ yet.
+> The _autoplay_ props utilize the default render method that allows the browser to optimize the animation framerate .
 
 # Events
 
