@@ -1,8 +1,11 @@
 # vue-spritecore
-> A Fully fledged Vue sprite-sheet animation SFC plugin
+> A lightweight fully fledged Vuejs sprite-sheet animation render engine in a compact SFC plugin format
 
 [![npm](https://img.shields.io/npm/v/vue-spritecore.svg) ![npm](https://img.shields.io/npm/dm/vue-spritecore.svg)](https://www.npmjs.com/package/vue-spritecore)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+![GitHub](https://img.shields.io/github/license/espressoshock/vue-spritecore.svg)
+![npm bundle size](https://img.shields.io/bundlephobia/min/vue-spritecore.svg)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/vue-spritecore.svg)
 
 <span style="display:block;text-align:center">
     <img src="./assets/vue-spritecore-logo.png" alt="vue-spritecore logo">
@@ -48,6 +51,17 @@ import { VueSpritecore } from 'vue-spritecore'
 Vue.component('vue-spritecore', VueSpritecore)
 ```
 # Usage
+> Generate your spritesheet
+
+* `spritesheet`: must be a valid image file (*reccomended* .png)
+* `json`: animation-data in **JSON Array** format
+
+You can generate the spritesheet also through any of the following online tools:
+
+* https://www.codeandweb.com/free-sprite-sheet-packer
+* https://www.leshylabs.com/apps/sstool/
+
+---
 
 > Add the component
 
@@ -76,7 +90,7 @@ export default {
   },
   methods: {
     ready: function(){
-      this.$refs.play();
+      this.$refs.animation.play();
     },
   }
 }
@@ -123,7 +137,7 @@ export default {
     this.$refs.animation.stop();            //stop(freeze) the animation
     this.$refs.animation.reset();           //reset the animation at frame _lowerBound_
     this.$refs.animation.reset(10);         //reset the animation at frame 10
-    this.$refs.animation.playLegacy(30);    //play the animation throught the legacy animator with constant framerate of 30
+    this.$refs.animation.playLegacy(30);    //play the animation through the legacy animator with constant framerate of 30
   },
   methods: {
     ready: function(){
@@ -171,6 +185,25 @@ autoplay   | false | Boolean | false
 loop   | false | Boolean | true
 lowerBound   | false | Number | 0
 upperBound   | false | Number | _animationLength_
+
+# Methods
+
+* `play(from, to)` : plays the animation from frame ***(from)*** to frame ***(to)*** . If no parameter is provided the animation is played from _lowerBound_ to _upperBound_
+* `stop()`: stops (freezes) the animation at the point in time it's invoked
+* `reset(to)`: resets the animation at frame ***(to)*** . If no parameter is provided the animation is resetted at frame _lowerBound_
+* `playLegacy(frameRate)`: plays the animation through the legacy animator at a constant framerate ***(frameRate)***
+<br/><br/>
+
+
+Name | Arguments | Default
+--------------- |------- |----------
+play | from (_optional_),<br/> to (_optional_) | from: _lowerBound_,<br/> to: _animationLength_
+stop |- |- |
+reset | to (_optional_) | to: _lowerBound_
+playLegacy | framerate (_optional_) | 60
+<br/>
+
+> In most of the cases it is not recommended to run the animation at a predefined constant framerate (through the playLegacy method) using a delta time based timing fn. A good explanation has already been given [here](https://stackoverflow.com/a/46346441) .
 
 
 # Events
