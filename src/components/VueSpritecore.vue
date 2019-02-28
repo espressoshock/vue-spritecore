@@ -132,6 +132,8 @@ export default {
       playLegacy(frameRate) {
             if(!Number.isNaN(Number(frameRate) && frameRate > 0))
                 this.animation.framerate = 1000 / frameRate;
+            else
+                this.animation.framerate = 1000 / 60;
 
             this.animation.running = true;
             this.$emit('animationStarted', this.animation.index, this.animation.upper); //emit animationStart
