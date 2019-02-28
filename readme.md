@@ -51,6 +51,17 @@ import { VueSpritecore } from 'vue-spritecore'
 Vue.component('vue-spritecore', VueSpritecore)
 ```
 # Usage
+> Generate your spritesheet
+
+* `spritesheet`: must be a valid image file (*reccomended* .png)
+* `json`: animation-data in **JSON Array** format
+
+You can generate the spritesheet also through any of the following online tools:
+
+* https://www.codeandweb.com/free-sprite-sheet-packer
+* https://www.leshylabs.com/apps/sstool/
+
+---
 
 > Add the component
 
