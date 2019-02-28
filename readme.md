@@ -1,5 +1,5 @@
 # vue-spritecore
-> A Fully fledged Vue sprite-sheet animation render engine in a compact SFC plugin
+> A lightweight fully fledged Vuejs sprite-sheet animation render engine in a compact SFC plugin format
 
 [![npm](https://img.shields.io/npm/v/vue-spritecore.svg) ![npm](https://img.shields.io/npm/dm/vue-spritecore.svg)](https://www.npmjs.com/package/vue-spritecore)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
