@@ -1,7 +1,7 @@
 {
   "name": "vue-spritecore",
-  "description": "A Fully fledged Vue sprite-sheet animation SFC plugin",
-  "version": "1.0.4",
+  "description": " lightweight fully fledged Vuejs sprite-sheet animation render engine in a compact SFC plugin format",
+  "version": "1.0.6",
   "author": {
     "name": "Vincenzo Buono",
     "email": "vincebshock@gmail.com"
