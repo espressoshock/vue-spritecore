@@ -90,7 +90,7 @@ export default {
   },
   methods: {
     ready: function(){
-      this.$refs.play();
+      this.$refs.animation.play();
     },
   }
 }
