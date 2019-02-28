@@ -137,7 +137,7 @@ export default {
     this.$refs.animation.stop();            //stop(freeze) the animation
     this.$refs.animation.reset();           //reset the animation at frame _lowerBound_
     this.$refs.animation.reset(10);         //reset the animation at frame 10
-    this.$refs.animation.playLegacy(30);    //play the animation throught the legacy animator with constant framerate of 30
+    this.$refs.animation.playLegacy(30);    //play the animation through the legacy animator with constant framerate of 30
   },
   methods: {
     ready: function(){
@@ -185,6 +185,25 @@ autoplay   | false | Boolean | false
 loop   | false | Boolean | true
 lowerBound   | false | Number | 0
 upperBound   | false | Number | _animationLength_
+
+# Methods
+
+* `play(from, to)` : plays the animation from frame ***(from)*** to frame ***(to)*** . If no parameter is provided the animation is played from _lowerBound_ to _upperBound_
+* `stop()`: stops (freezes) the animation at the point in time it's invoked
+* `reset(to)`: resets the animation at frame ***(to)*** . If no parameter is provided the animation is resetted at frame _lowerBound_
+* `playLegacy(frameRate)`: plays the animation through the legacy animator at a constant framerate ***(frameRate)***
+<br/><br/>
+
+
+Name | Arguments | Default
+--------------- |------- |----------
+play | from (_optional_),<br/> to (_optional_) | from: _lowerBound_,<br/> to: _animationLength_
+stop |- |- |
+reset | to (_optional_) | to: _lowerBound_
+playLegacy | framerate (_optional_) | 60
+<br/>
+
+> In most of the cases it is not recommended to run the animation at a predefined constant framerate (through the playLegacy method) using a delta time based timing fn. A good explanation has already been given [here](https://stackoverflow.com/a/46346441) .
 
 
 # Events
