@@ -8,7 +8,7 @@
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/vue-spritecore.svg)
 
 <span style="display:block;text-align:center">
-    <img src="./assets/vue-spritecore-logo.png" alt="vue-spritecore logo">
+    <img src="./assets/vue-spritecore-logo-animated.png" alt="vue-spritecore logo">
 </span>
 
 
